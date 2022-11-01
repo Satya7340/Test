@@ -8,7 +8,7 @@ stages {
   stage('Login'){
        steps{echo "Active User is ${UserId}"}}
   stage ('first stage'){
-       steps{echo 'Hello'
+      steps{echo 'Hello ${UserID}'
              input 'continue to next stage?'}}
   stage('Input'){
            steps{ 
@@ -19,8 +19,17 @@ stages {
                    echo "${resp.RESPONSE1} by ${resp.RESPONSE2}"
                }   } }
    
+  stage('Input'){
+           steps{ 
+               script{
+                   env.RESP1 = input message: 'Please provide environment details',
+                       parameters: [string(defaultValue: '', description: 'Enter Response 1', name: 'RESPONSE1')]
+                   env.RESP2 = input message: 'Please provide environment details',
+                       parameters: [string(defaultValue: '', description: 'Enter Response 2', name: 'RESPONSE2')]
+                   echo "${env.RESPONSE1} deployment is complete"
+               }   } }  
   stage ('Second stage'){
-   steps{echo 'world'}}
+   steps{echo "${env.RESPONSE2} deployment is next"}}
 }
 }
       
