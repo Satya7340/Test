@@ -6,7 +6,7 @@ parameters{
             description: 'Enter your user ID')} 
 stages {
   stage('Login'){
-       steps{echo "Active User is ${UserId}"}}
+       steps{echo "Active User is ${params.UserId}"}}
   stage ('first stage'){
       steps{echo 'Hello ${UserID}'
              input 'continue to next stage?'}}
