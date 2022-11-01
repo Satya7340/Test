@@ -9,7 +9,7 @@ stages {
        steps{echo "Active User is ${UserId}"}}
   stage ('first stage'){
        steps{echo 'Hello'
-         input 'continue to next stage?'}
+             input 'continue to next stage?'}}
   stage('Input'){
            steps{ 
                script{
@@ -18,7 +18,6 @@ stages {
                                     string(defaultValue: '', description: 'Enter Response 2', name: 'RESPONSE2')]
                    echo "${resp.RESPONSE1} + ${resp.RESPONSE2}"
                }   } }
-    }
    
   stage ('Second stage'){
    steps{echo 'world'}}
