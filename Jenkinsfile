@@ -22,14 +22,14 @@ stages {
   stage('Input2'){
            steps{ 
                script{
-                   env.RESP1 = input message: 'Please provide environment details',
+                   env.RESP3 = input message: 'Please provide environment details',
                        parameters: [string(defaultValue: '', description: 'Enter Response 1', name: 'RESPONSE3')]
-                   env.RESP2 = input message: 'Please provide environment details',
+                   env.RESP4 = input message: 'Please provide environment details',
                        parameters: [string(defaultValue: '', description: 'Enter Response 2', name: 'RESPONSE4')]
-                   echo "${env.RESPONSE3} deployment is complete"
+                   echo "${env.RESP3} deployment is complete"
                }   } }  
   stage ('Second stage'){
-   steps{echo "${env.RESPONSE4} deployment is next"}}
+   steps{echo "${env.RESP4} deployment is next"}}
 }
 }
       
