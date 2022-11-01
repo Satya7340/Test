@@ -19,7 +19,7 @@ stages {
                    echo "${resp.RESPONSE1} by ${resp.RESPONSE2}"
                }   } }
    
-  stage('Input'){
+  stage('Input2'){
            steps{ 
                script{
                    env.RESP1 = input message: 'Please provide environment details',
