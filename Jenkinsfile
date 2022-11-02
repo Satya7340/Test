@@ -8,8 +8,7 @@ stages {
   stage('Login'){
        steps{echo "Active User is ${params.UserId}"}}
   stage ('first stage'){
-      steps{ input 'continue to next stage?'
-            echo "Hello ${params.UserID}" }}
+      steps{ input 'continue to next stage?'}}
   stage('Input'){
            steps{ 
                script{
