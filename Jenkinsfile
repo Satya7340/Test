@@ -13,8 +13,8 @@ stages {
            steps{ 
                script{
                    def resp = input message: 'Hi There',
-                       parameters: [string(defaultValue: '', description: 'Enter Response 1', name: 'RESPONSE1'),
-                                    string(defaultValue: '', description: 'Enter Response 2', name: 'RESPONSE2')]
+                       parameters: [string(defaultValue: '', description: 'Enter Environment_name', name: 'RESPONSE1'),
+                                    string(defaultValue: '', description: 'Enter First_Name', name: 'RESPONSE2')]
                    echo "${resp.RESPONSE1} by ${resp.RESPONSE2}"
                }   } }
    
